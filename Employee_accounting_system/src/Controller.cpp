@@ -1,10 +1,10 @@
 //
 // Created by User on 16.12.2025.
 //
-#include "Controller.h"
+#include "../headers/Controller.h"
 #include <fstream>
 #include <string>
-#include "MainData.h"
+#include "../headers/MainData.h"
 
 
 void Controller::write_division(json* array, Data* div, Data* parent) {

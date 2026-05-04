@@ -2,8 +2,8 @@
 // Created by User on 17.11.2025.
 //
 
-#include "Leader.h"
-#include "Data.h"
+#include "../headers/Leader.h"
+#include "../headers/Data.h"
 string Leader::get_post() const {
     return post;
 }

@@ -2,8 +2,8 @@
 // Created by User on 17.11.2025.
 //
 
-#include "Data.h"
-#include "Leader.h"
+#include "../headers/Data.h"
+#include "../headers/Leader.h"
 using std::move;
 using std::make_unique;
 string Data::get_name() const {

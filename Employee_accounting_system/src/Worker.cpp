@@ -1,7 +1,7 @@
 //
 // Created by User on 17.11.2025.
 //
-#include "Worker.h"
+#include "../headers/Worker.h"
 string Worker::get_post() const {
     return post;
 }

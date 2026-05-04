@@ -1,7 +1,7 @@
 //
 // Created by User on 01.12.2025.
 //
-#include "MainData.h"
+#include "../headers/MainData.h"
 
 
 void MainData::write_worker(shared_ptr<I_Worker> worker, int code, const string& div, bool add_if_null) {//check = true
@@ -12,7 +12,7 @@ void MainData::write_worker(shared_ptr<I_Worker> worker, int code, const string&
     div_ptr->write_worker(worker, code);
 }
 
-void MainData::add_division(string name, string where) {
+void MainData::add_division(const string& name, const string& where) {
     if(find_division(name) != nullptr)throw std::logic_error("division with this name already be");
     auto leader = make_shared<Leader>(NULL_LEADER);
     shared_ptr<Data> data = make_shared<Data>(name);

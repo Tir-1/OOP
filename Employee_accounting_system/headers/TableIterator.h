@@ -1,3 +1,5 @@
+#ifndef TABLE_ITERATOR_
+#define TABLE_ITERATOR_
 using std::pair;
 /**
  * @brief Структура узла хеш-таблицы
@@ -67,7 +69,7 @@ public:
     * @requires (is_const >= other_const) Преобразование только в константный итератор
     */
     template<bool other_const>
-    TableIterator(const TableIterator<Key, Value, other_const>& other) noexcept
+    explicit TableIterator(const TableIterator<Key, Value, other_const>& other) noexcept
     requires (is_const >= other_const) {
         current = other.current;
         end = other.end;
@@ -160,3 +162,4 @@ public:
         return &current->element;
     }
 };
+#endif

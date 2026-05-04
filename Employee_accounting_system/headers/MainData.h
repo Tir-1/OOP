@@ -8,13 +8,13 @@
 #include "../headers/Leader.h"
 class MainData: public Data {
 public:
-    MainData(string name): Data(name){};
-    ~MainData() {delete_data();};
+    explicit MainData(const string& name): Data(name){};
+    ~MainData() {delete_data();}
 
 
     void write_worker(shared_ptr<I_Worker> worker, int code, const string& div, bool add_if_null=true);
     shared_ptr<Data> find_division(const string& name);
-    void add_division(string name, string where);
+    void add_division(const string& name, const string& where);
     shared_ptr<Data> find_worker_division(int code);
 
     worker_info erase_worker(size_t code, bool flag_delete=true);

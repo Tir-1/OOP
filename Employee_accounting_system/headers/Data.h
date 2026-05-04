@@ -26,7 +26,7 @@ protected:
     int key_div;
     string name;
 public:
-    Data(const string& name):name(name), workers(), key_div(-1){};
+    explicit Data(string name):name(std::move(name)), workers(), key_div(-1){};
 
     string get_name() const;
 

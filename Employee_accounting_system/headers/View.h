@@ -67,10 +67,11 @@ public:
      * @brief Конструктор View
      * @param o Поток вывода
      */
-    View(std::ostream& o):output(o){};
+    explicit View(std::ostream& o):output(o){};
     /**
      * @brief Запускает главный цикл приложения
      */
     void run();
+    View(): output(std::cout){};
 };
 #endif //LAB3_VIEW_H

@@ -21,9 +21,9 @@ private:
 protected:
     void show(std::ostream& o) const override;
 public:
-    Leader(const string& username, const string& post, double salary, const string& education, const year& birth_year):username(username), post(post), salary(salary), birth_year(birth_year),  education(education), type(LEADER){}
-    Leader(status s):username("NULL LEADER"), type(NULL_LEADER){};
-    Leader(shared_ptr<I_Worker> other) {
+    Leader(string username, string post, double salary, string education, const year& birth_year):username(std::move(username)), post(std::move(post)), salary(salary), birth_year(birth_year),  education(std::move(education)), type(LEADER){}
+    explicit Leader(status s):username("NULL LEADER"), type(NULL_LEADER), salary(0), birth_year(0){};
+    explicit Leader(const shared_ptr<I_Worker>& other) {
         username = other->get_name();
         post = other->get_post();
         salary = other->get_salary();
@@ -33,14 +33,14 @@ public:
     }
 
 
-    string get_post() const override;
-    double get_salary() const override;
-    status get_status() const override;
-    string get_name() const override;
-    string get_education() const override;
-    year get_year() const override;
+    [[nodiscard]] string get_post() const override;
+    [[nodiscard]] double get_salary() const override;
+    [[nodiscard]] status get_status() const override;
+    [[nodiscard]] string get_name() const override;
+    [[nodiscard]] string get_education() const override;
+    [[nodiscard]] year get_year() const override;
 
-    shared_ptr<Data> get_division() const override;
+    [[nodiscard]] shared_ptr<Data> get_division() const override;
 
     void set_post(const string& new_post) override;
     void set_salary(double new_salary) override;

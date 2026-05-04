@@ -1,4 +1,4 @@
-#include "input.h"
+#include "../headers/input.h"
 #include <limits>
 #include <vector>
 #include <algorithm>

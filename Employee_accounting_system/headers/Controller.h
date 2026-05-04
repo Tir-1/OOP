@@ -7,7 +7,6 @@
 #include "using.h"
 #include "MainData.h"
 #include <nlohmann/json.hpp>
-#include <vector>
 #include <future>
 using json = nlohmann::json;
 
@@ -21,7 +20,7 @@ public:
     * @brief Конструктор контроллера
     * @param name Название компании
     */
-    Controller(const string& name) : company(name) {}
+    explicit Controller(const string& name) : company(name) {}
 
     /**
      * @brief Сохраняет состояние компании в файл json
@@ -79,7 +78,7 @@ public:
      * @param name Название нового подразделения
      * @param where Название родительского подразделения
      */
-    void add_division(string name, string where) {company.add_division(name, where);}
+    void add_division(const string& name, const string& where) {company.add_division(name, where);}
     /**
      * @brief Удаляет сотрудника
      * @param code Код сотрудника для удаления
@@ -101,6 +100,6 @@ public:
     * @brief Возвращает название компании
     * @return Название компании
     */
-    string get_name_company(){return company.get_name();}
+    string get_name_company() const{return company.get_name();}
 };
 #endif //LAB3_CONTROLLER_H

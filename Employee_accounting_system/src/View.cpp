@@ -1,11 +1,11 @@
 //
 // Created by User on 17.12.2025.
 //
-#include "View.h"
-#include "using.h"
-#include "Worker.h"
-#include "Leader.h"
-#include "input.h"
+#include "../headers/View.h"
+#include "../headers/using.h"
+#include "../headers/Worker.h"
+#include "../headers/Leader.h"
+#include "../headers/input.h"
 #include <iostream>
 
 

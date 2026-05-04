@@ -225,7 +225,7 @@ public:
      * @brief Возвращает количество элементов в таблице
      * @return Количество элементов
      */
-    size_t get_size() const {
+    [[nodiscard]] size_t get_size() const {
         return size;
     }
 };
